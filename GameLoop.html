@@ -1,0 +1,82 @@
+﻿<!doctype html>
+
+<html lang="en">
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="./css/push.css">
+    <body>
+        <canvas id="game" width="800" height="600"></canvas>
+
+
+
+
+
+        <table>
+            <tbody>
+                <tr>
+                    <td colspan="3">
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><button onmousedown="upButtonOnClick()" id="buttonUp" class="button green round">△</button></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><button onmousedown="leftButtonOnClick()" id="buttonLeft" class="button pink round">□</button></td>
+                    <td>&nbsp;</td>
+                    <td><button onmousedown="rightButtonOnClick()" id="buttonRight" class="button red round">O</button></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><button onmousedown="downButtonOnClick()" id="buttonDown" class="button blue round">X</button></td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td colspan="3" align="center">
+                        <div class="custom-select" style="width:200px;">
+                            <select id="songs" onchange="musicSelection()">
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="3" align="center">
+                        <label class="switch">
+                            <input id="active" onclick="musicSelection()" type="checkbox">
+                            <span class="toggle"></span>
+                        </label>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+        <h1 id="HUD" onload="musicSelection()"></h1>
+
+        <audio>
+            audio src="buttonSound.mp3" id="buttonSound">
+        </audio>
+
+        <audio>
+            audio src="pursuit.mp3" id="pursuit">
+        </audio>
+
+        <audio>
+            audio src="battleff7.mp3" id="battleff7">
+        </audio>
+
+        <audio>
+            audio src="battleXeno2.mp3" id="battleXeno2">
+        </audio>
+    </body>
+
+
+
+
+
+    <script src="./js/script.js"></script>
+
+</html>
