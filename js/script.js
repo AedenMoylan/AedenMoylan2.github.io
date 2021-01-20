@@ -339,7 +339,7 @@ function onPageLoad() {
 	
 	var splitString = url.split("=");
 	
-	alert(splitString[2]);
+	alert(splitString[1]);
 }
 // gameloop
 function gameloop() {
