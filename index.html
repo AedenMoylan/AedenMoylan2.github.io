@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html>
+<body onload="onPageLoad()">
 
-
-<h1>List of projects</h1>
-
+<h1>Project Selection</h1>
 
 <form action="https://aedenmoylan.github.io/GameLoop" method="get">
 
-    <button type="submit">GameLoop</button>
+    <input type="text" value="test" name="gamertag">
+    <button type="submit">Submit</button>
   </form>
-
+    
+<script>
+function onPageLoad() {
+var href = window.location.href;
+    alert(href);
+   
+    var protocol = window.location.protocol;
+    alert(protocol);
+   
+    var host = window.location.host;
+    alert(host);
+   
+   
+    var pathname = window.location.pathname;
+    alert(pathname);
+   
+    var search = window.location.search;
+    alert(search);
+   
+}
+</script>
 
 </body>
 </html>

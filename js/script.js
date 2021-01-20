@@ -332,6 +332,15 @@ function animate() {
 	
 	drawHealthbar();
 }
+
+function onPageLoad() {
+	
+	var url = document.location.href;
+	
+	var splitString = url.split("=");
+	
+	alert(splitString[2]);
+}
 // gameloop
 function gameloop() {
     update();
