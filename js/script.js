@@ -336,10 +336,10 @@ function animate() {
 function onPageLoad() {
 	
 	var url = document.location.href;
-	
+	var welcomeMessage = "welcome ";
 	var splitString = url.split("=");
-	
-	alert(splitString[1]);
+	var fullMessage = welcomeMessage.concat(splitString[1]);
+	alert(fullMessage);
 }
 // gameloop
 function gameloop() {
