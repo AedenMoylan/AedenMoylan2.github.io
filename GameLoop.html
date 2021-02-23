@@ -1,82 +1,132 @@
 ﻿<!doctype html>
 
 <html lang="en">
-    <meta charset="utf-8">
-	<link rel="stylesheet" href="./css/push.css">
-    <body onload="onPageLoad()">
-        <canvas id="game" width="800" height="600"></canvas>
+<meta charset="utf-8">
+<link rel="stylesheet" href="./css/push.css">
+
+<link rel="manifest" href="/manifest.json">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Aeden Moylan's Progressive Web Application">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Sean Whelan">
+
+    <link rel="apple-touch-icon" href="img/apple-icon-152x152.png">
+    <meta name="theme-color" content="white" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Aeden Moylan's PWA (Progressive Web Application)">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-title" content="Aeden Moylan's PWA (Progressive Web Application)">
+
+    <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+</head>
+
+<body onload="onPageLoad()">
+    <canvas id="game" width="800" height="600"></canvas>
 
 
 
 
 
-        <table>
-            <tbody>
-                <tr>
-                    <td colspan="3">
-                    </td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td><button onmousedown="upButtonOnClick()" id="buttonUp" class="button green round">△</button></td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td><button onmousedown="leftButtonOnClick()" id="buttonLeft" class="button pink round">□</button></td>
-                    <td>&nbsp;</td>
-                    <td><button onmousedown="rightButtonOnClick()" id="buttonRight" class="button red round">O</button></td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td><button onmousedown="downButtonOnClick()" id="buttonDown" class="button blue round">X</button></td>
-                    <td>&nbsp;</td>
-                </tr>
+    <table>
+        <tbody>
+            <tr>
+                <td colspan="3">
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><button onmousedown="upButtonOnClick()" id="buttonUp" class="button green round">△</button></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><button onmousedown="leftButtonOnClick()" id="buttonLeft" class="button pink round">□</button></td>
+                <td>&nbsp;</td>
+                <td><button onmousedown="rightButtonOnClick()" id="buttonRight" class="button red round">O</button></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><button onmousedown="downButtonOnClick()" id="buttonDown" class="button blue round">X</button></td>
+                <td>&nbsp;</td>
+            </tr>
 
-                <tr>
-                    <td colspan="3" align="center">
-                        <div class="custom-select" style="width:200px;">
-                            <select id="songs" onchange="musicSelection()">
-                            </select>
-                        </div>
-                    </td>
-                </tr>
+            <tr>
+                <td colspan="3" align="center">
+                    <div class="custom-select" style="width:200px;">
+                        <select id="songs" onchange="musicSelection()">
+                        </select>
+                    </div>
+                </td>
+            </tr>
 
-                <tr>
-                    <td colspan="3" align="center">
-                        <label class="switch">
-                            <input id="active" onclick="musicSelection()" type="checkbox">
-                            <span class="toggle"></span>
-                        </label>
-                    </td>
-                </tr>
+            <tr>
+                <td colspan="3" align="center">
+                    <label class="switch">
+                        <input id="active" onclick="musicSelection()" type="checkbox">
+                        <span class="toggle"></span>
+                    </label>
+                </td>
+            </tr>
 
-            </tbody>
+        </tbody>
 
-        </table>
+    </table>
 
-        <h1 id="HUD" onload="musicSelection()"></h1>
+    <h1 id="HUD" onload="musicSelection()"></h1>
 
-        <audio>
-            audio src="buttonSound.mp3" id="buttonSound">
-        </audio>
+    <audio>
+        audio src="buttonSound.mp3" id="buttonSound">
+    </audio>
 
-        <audio>
-            audio src="pursuit.mp3" id="pursuit">
-        </audio>
+    <audio>
+        audio src="pursuit.mp3" id="pursuit">
+    </audio>
 
-        <audio>
-            audio src="battleff7.mp3" id="battleff7">
-        </audio>
+    <audio>
+        audio src="battleff7.mp3" id="battleff7">
+    </audio>
 
-        <audio>
-            audio src="battleXeno2.mp3" id="battleXeno2">
-        </audio>
-    </body>
-
-
+    <audio>
+        audio src="battleXeno2.mp3" id="battleXeno2">
+    </audio>
+</body>
 
 
 
-    <script src="./js/script.js"></script>
+
+
+<script src="./js/script.js"></script>
+
+<script src="./js/register.js"></script>
 
 </html>
