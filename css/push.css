@@ -121,8 +121,7 @@ input:checked + .toggle {
 /* Select Styling*/
 select {
     position: relative;
-    left: 350px;
-    top: -300px;
+    
     width: 200px;
     padding: 5px 5px 5px 5px;
     font-size: 16px;
