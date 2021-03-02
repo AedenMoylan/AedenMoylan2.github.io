@@ -44,8 +44,6 @@
 
 .switch {
     position: relative;
-    left: 350px;
-    top: -300px;
     /* No line-break after the element, so the element can sit next to other elements.*/
     display: inline-block;
     width: 60px;
