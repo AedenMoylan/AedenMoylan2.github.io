@@ -56,7 +56,7 @@
 </head>
 
 <body onload="onPageLoad()">
-    <canvas id="game" width="350" height="200"></canvas>
+    <canvas id="game" width="800" height="600"></canvas>
 
 
 
@@ -87,7 +87,7 @@
             <tr>
                 <td colspan="3" align="center">
                     <div class="custom-select" style="width:200px;">
-                        <select id="songs" onchange="musicSelection()">
+                        <select id="missiles" onchange="missileSelection()">
                         </select>
                     </div>
                 </td>
@@ -96,9 +96,12 @@
             <tr>
                 <td colspan="3" align="center">
                     <label class="switch">
-                        Music
-                        <input id="active" onclick="musicSelection()" type="checkbox">
-                        <span class="toggle"></span>
+
+                        <input type="text" id="splash" value="test" name="gamertag">
+                        <button type="submit" onclick="playSplashSound()" input id="active">Fire</button>
+
+                        <!---  <input id="active" onclick="missileSelection()" type="checkbox">
+                        <!---   <span class="toggle"></span> -->
                     </label>
                 </td>
             </tr>
@@ -107,7 +110,7 @@
 
     </table>
 
-    <h1 id="HUD" onload="musicSelection()"></h1>
+    <h1 id="HUD" onload="missileSelection()"></h1>
 
     <audio>
         audio src="buttonSound.mp3" id="buttonSound">
@@ -123,6 +126,10 @@
 
     <audio>
         audio src="battleXeno2.mp3" id="battleXeno2">
+    </audio>
+
+    <audio>
+        audio src="splash.mp3" id="splash">
     </audio>
 </body>
 
