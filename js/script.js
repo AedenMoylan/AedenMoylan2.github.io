@@ -7,6 +7,23 @@ var shotMessage = "Shots Fired: ";
 var xSpriteXPos = -200;
 var xSpriteYPos = -200;
 
+var isPlayerOnEnemy = false;
+
+playerPosition = [
+  [100, 100]
+];
+
+var enemyPosition;
+
+var ranNumx = Math.floor((Math.random() * 8) + 1);
+
+var ranNumy = Math.floor((Math.random() * 6) + 1);
+
+console.log(ranNumx);
+console.log(ranNumy);
+
+makeEnemyPosition();
+
 // Update Heads Up Display with song Information
 function missileSelection() {
   var selection = document.getElementById("missiles").value;
@@ -43,6 +60,16 @@ function missileSelection() {
     xeno2Audio.pause();
     xeno2Audio.currentTime = 0;
   }
+}
+
+
+function makeEnemyPosition() {
+
+  enemyPosition = [
+    [ranNumx * 100 - 100, ranNumy * 100 - 100]
+  ]
+
+  console.log(enemyPosition);
 }
 
 
@@ -92,12 +119,17 @@ sprite.src = "./img/reticle.png";
 var backGroundSprite = new Image();
 backGroundSprite.src = "./img/ocean.jpg"
 // gets gameover sprite
+var gridSprite = new Image();
+gridSprite.src = "./img/grid.png"
+
 var gameOverSprite = new Image();
 gameOverSprite.src = "./img/gameOver.jpg"
 
+//for (var i = 0; i < 10; i++)
+//{
 var xSprite = new Image();
 xSprite.src = "./img/x sprite.png"
-
+//}
 // audio which is used in the game
 var buttonAudio = new Audio('buttonSound3.mp3');
 var ff7Audio = new Audio("battleff7.mp3");
@@ -233,26 +265,9 @@ function update() {
     gamerInput.action = "None"
   }
 
-  // move enemy
-  if (gameobjects[0].x > gameobjects[1].x) {
-    gameobjects[1].x += 1;
-  }
 
 
-  if (gameobjects[0].x < gameobjects[1].x) {
-    gameobjects[1].x -= 1;
-  }
-
-
-  if (gameobjects[0].y > gameobjects[1].y) {
-    gameobjects[1].y += 1;
-  }
-
-
-  if (gameobjects[0].y < gameobjects[1].y) {
-    gameobjects[1].y -= 1;
-  }
-
+  checkIfPosIsEqual();
 }
 
 // draw gameobjects
@@ -261,6 +276,23 @@ function draw() {
   // Iterate through all GameObjects
   // Draw each GameObject
   // console.log("Draw");
+
+}
+
+function checkIfPosIsEqual() {
+
+  if (gameobjects[0].x == enemyPosition[0][0] && gameobjects[0].y == enemyPosition[0][1]) {
+
+    isPlayerOnEnemy = true;
+  }
+  else {
+    isPlayerOnEnemy = false;
+  }
+  console.log(isPlayerOnEnemy);
+
+
+  // console.log(gameobjects[0].x);
+  // console.log(enemyPosition[0][0]);
 
 }
 
@@ -280,6 +312,7 @@ function playSplashSound() {
 
   xSpriteXPos = gameobjects[0].x;
   xSpriteYPos = gameobjects[0].y
+
 
 }
 // Total Frames
@@ -306,8 +339,8 @@ function animate() {
 
   // Draw sprites
   context.drawImage(backGroundSprite, 0, 0, 800, 600);
+  context.drawImage(gridSprite, 0, 0, 800, 800);
   context.drawImage(sprite, (0), (0), 42, 42, gameobjects[0].x, gameobjects[0].y, 100, 100);
-
   context.drawImage(xSprite, xSpriteXPos + 30, xSpriteYPos + 30, 42, 42);
 
   // draws gameover is health <= 0
@@ -326,7 +359,10 @@ function onPageLoad() {
   var splitString = url.split("=");
   var fullMessage = welcomeMessage.concat(splitString[1]);
   alert(fullMessage);
+
 }
+
+
 // gameloop
 function gameloop() {
   update();
@@ -335,6 +371,7 @@ function gameloop() {
   window.requestAnimationFrame(gameloop);
 
 }
+
 
 // Handle Active Browser Tag Animation
 window.requestAnimationFrame(gameloop);
