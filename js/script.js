@@ -299,7 +299,7 @@ function checkIfPosIsEqual() {
 function shootMissile() {
   gamerInput = new GamerInput("splash");
 
-
+  playSplashSound();
 }
 
 
