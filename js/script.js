@@ -32,9 +32,9 @@ console.log(ranNumy);
 
 makeEnemyPosition();
 
-var radarText = canvas.getContext("2d");
-radarText.font = "30px Arial";
-radarText.fillText("Hello World", 10, 50);
+// var radarText = canvas.getContext("2d");
+// radarText.font = "30px Arial";
+// radarText.fillText("Hello World", 10, 50);
 
 
 // Update Heads Up Display with song Information
@@ -427,7 +427,7 @@ function animate() {
 
   context.drawImage(explosionSprite, (explosionSprite.width / 4) * currentFrame, (explosionSprite.height / 4), 64, 64, explosionPositionX, explosionPositionY, 100, 100);
 
-  context.drawImage(radarText, 100, 100, 100, 100);
+  document.write("Hello World!");
 
   //context.drawImage(xSprite, xSpriteXPos + 30, xSpriteYPos + 30, 42, 42);
   // draws gameover is health <= 0
