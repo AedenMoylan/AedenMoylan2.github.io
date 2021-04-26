@@ -114,7 +114,7 @@ var npcsprite = new Image();
 npcsprite.src = "./img/bahamut.png";
 
 var splashSprite = new Image();
-splashSprite.src = "./img/splash";
+splashSprite.src = "./img/splash.png";
 // gets player sprite
 var sprite = new Image();
 sprite.src = "./img/reticle.png";
