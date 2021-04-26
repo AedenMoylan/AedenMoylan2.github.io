@@ -5,19 +5,10 @@ var context = canvas.getContext("2d");
 var shotCount = 5;
 var shotMessage = "Shots Fired: ";
 
-var xSpriteXPos = -200;
-var xSpriteYPos = -200;
+var xSpriteCounter = 0;
+var xSpriteXPos = [-200, -200, -200, -200, -200];
+var xSpriteYPos = [-200, -200, -200, -200, -200];
 
-//var xSpriteXPos[5];
-var xSpriteX = new xSpriteXPos(5);
-var xSpriteY = new xSpriteyPos(5);
-
-for (i = 0; i < 5; i++) {
-  xSpriteXPos(i) = -200;
-  xSpriteYPos(i) = -200;
-  // text += "<li>" + fruits[i] + "</li>";
-  console.log(xSpriteXPos(i));
-}
 var splashPositionX = -200;
 var splashPositionY = -200;
 
@@ -148,11 +139,25 @@ gameOverSprite.src = "./img/gameOver.jpg"
 var explosionSprite = new Image();
 explosionSprite.src = "./img/explosion.png"
 
-//for (var i = 0; i < 10; i++)
-//{
-var xSprite = new Image();
-xSprite.src = "./img/x sprite.png"
-//}
+
+
+var xSprite = new Array();
+
+xSprite[0] = new Image();
+xSprite[0].src = 'images/img/x sprite.png';
+
+xSprite[1] = new Image();
+xSprite[1].src = 'images/img/x sprite.png';
+
+xSprite[2] = new Image();
+xSprite[2].src = 'images/img/x sprite.png';
+
+xSprite[3] = new Image();
+xSprite[3].src = 'images/img/x sprite.png';
+
+xSprite[4] = new Image();
+xSprite[4].src = 'images/img/x sprite.png';
+
 // audio which is used in the game
 var buttonAudio = new Audio('buttonSound3.mp3');
 var ff7Audio = new Audio("battleff7.mp3");
@@ -336,6 +341,8 @@ function shootMissile() {
 
   splashPositionX = gameobjects[0].x;
   splashPositionY = gameobjects[0].y;
+
+  moveXSprite();
 }
 
 
@@ -370,8 +377,10 @@ function hitEnemy() {
 
 function moveXSprite() {
 
-  xSpriteXPos = gameobjects[0].x;
-  xSpriteYPos = gameobjects[0].y
+  xSpriteXPos[xSpriteCounter] = gameobjects[0].x;
+  xSpriteYPos[xSpriteCounter] = gameobjects[0].y
+
+  xSpriteCounter++;
 
 }
 // Total Frames
@@ -402,6 +411,10 @@ function animate() {
   context.drawImage(sprite, (0), (0), 42, 42, gameobjects[0].x, gameobjects[0].y, 100, 100);
 
   context.drawImage(splashSprite, (splashSprite.width / 4) * currentFrame, (splashSprite.height / 2), 62, 33, splashPositionX, splashPositionY, 100, 100);
+
+  for (i = 0; i < 5; i++) {
+    context.draw(xSprite[i], xSpriteXPos[i] + 30, xSpriteYPos[i] + 30, 42, 42);
+  }
 
   context.drawImage(explosionSprite, (explosionSprite.width / 4) * currentFrame, (explosionSprite.height / 4), 64, 64, explosionPositionX, explosionPositionY, 100, 100);
 
