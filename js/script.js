@@ -422,7 +422,7 @@ function animate() {
 
   context.drawImage(explosionSprite, (explosionSprite.width / 4) * currentFrame, (explosionSprite.height / 4), 64, 64, explosionPositionX, explosionPositionY, 100, 100);
 
-  context.drawImage(xSprite, xSpriteXPos + 30, xSpriteYPos + 30, 42, 42);
+  //context.drawImage(xSprite, xSpriteXPos + 30, xSpriteYPos + 30, 42, 42);
   // draws gameover is health <= 0
   if (playerHealth <= 0) {
     context.drawImage(gameOverSprite, 0, 0, 800, 600);
