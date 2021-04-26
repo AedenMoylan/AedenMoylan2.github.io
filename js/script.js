@@ -298,21 +298,21 @@ function checkIfPosIsEqual() {
 
 function shootMissile() {
   gamerInput = new GamerInput("splash");
-  console.log(bababababababababooey);
+
 
 }
 
 
-//function playSplashSound() {
-gamerInput = new GamerInput("splash");
-splashSound.play();
+function playSplashSound() {
+  gamerInput = new GamerInput("splash");
+  splashSound.play();
 
-console.log(shotMessage);
-console.log(shotCount);
+  console.log(shotMessage);
+  console.log(shotCount);
 
-if (shotCount <= 0) {
-  console.log("you lose");
-  //}
+  if (shotCount <= 0) {
+    console.log("you lose");
+  }
 
   shotCount--;
 
