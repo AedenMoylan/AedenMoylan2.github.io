@@ -112,6 +112,9 @@ var options = [{
 // gets big dragon sprite
 var npcsprite = new Image();
 npcsprite.src = "./img/bahamut.png";
+
+var splashSprite = new Image();
+splashSprite.src = "./img/splash";
 // gets player sprite
 var sprite = new Image();
 sprite.src = "./img/reticle.png";
@@ -290,10 +293,6 @@ function checkIfPosIsEqual() {
   }
   console.log(isPlayerOnEnemy);
 
-
-  // console.log(gameobjects[0].x);
-  // console.log(enemyPosition[0][0]);
-
 }
 
 function shootMissile() {
@@ -309,6 +308,10 @@ function shootMissile() {
 
   playSplashSound();
   moveXSprite();
+
+  if (isPlayerOnEnemy == true) {
+
+  }
 }
 
 
@@ -319,6 +322,11 @@ function playSplashSound() {
 
 
 
+
+
+}
+
+function hitEnemy() {
 
 
 }
@@ -352,7 +360,7 @@ function animate() {
   }
 
   // Draw sprites
-  context.drawImage(backGroundSprite, 0, 0, 800, 600);
+  //context.drawImage(backGroundSprite, 0, 0, 800, 600);
   context.drawImage(gridSprite, 0, 0, 800, 800);
   context.drawImage(sprite, (0), (0), 42, 42, gameobjects[0].x, gameobjects[0].y, 100, 100);
   context.drawImage(xSprite, xSpriteXPos + 30, xSpriteYPos + 30, 42, 42);
