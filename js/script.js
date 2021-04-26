@@ -4,8 +4,9 @@ var context = canvas.getContext("2d");
 
 var shotCount = 5;
 var shotMessage = "Shots Fired: ";
-//var xSpriteXPos = -200;
-//var xSpriteYPos = -200;
+
+var xSpriteXPos = -200;
+var xSpriteYPos = -200;
 
 //var xSpriteXPos[5];
 var xSpriteX = new xSpriteXPos(5);
