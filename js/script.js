@@ -375,7 +375,7 @@ function animate() {
 
   context.drawImage(splashSprite, (splashSprite.width / 4) * currentFrame, (splashSprite.height / 2), 62, 33, splashPositionX, splashPositionY, 100, 100);
 
-  context.drawImage(explosionSprite, (explosionSprite.width / 4) * currentFrame, (splashSprite.height / 4), 64, 64, 200, 200, 100, 100);
+  context.drawImage(explosionSprite, (explosionSprite.width / 4) * currentFrame, (splashSprite.height / 4), 58, 58, 200, 200, 100, 100);
 
   context.drawImage(xSprite, xSpriteXPos + 30, xSpriteYPos + 30, 42, 42);
   // draws gameover is health <= 0
