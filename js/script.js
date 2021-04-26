@@ -460,7 +460,7 @@ function displayWelcomeMessage() {
 function displayRadarCoordinates() {
 
   radarXCoordinate = gameobjects[0].x - enemyPosition[0][0];
-  radarYCoordinate = gameobjects[0].x - enemyPosition[0][1];
+  radarYCoordinate = gameobjects[0].y - enemyPosition[0][1];
 
   if (radarXCoordinate < 0) {
     radarXCoordinate = radarXCoordinate * -1;
