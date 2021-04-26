@@ -299,7 +299,16 @@ function checkIfPosIsEqual() {
 function shootMissile() {
   gamerInput = new GamerInput("splash");
 
+  console.log(shotMessage);
+  console.log(shotCount);
+
+  if (shotCount <= 0) {
+    console.log("you lose");
+  }
+  shotCount--;
+
   playSplashSound();
+  moveXSprite();
 }
 
 
@@ -307,18 +316,17 @@ function playSplashSound() {
   gamerInput = new GamerInput("splash");
   splashSound.play();
 
-  console.log(shotMessage);
-  console.log(shotCount);
 
-  if (shotCount <= 0) {
-    console.log("you lose");
-  }
 
-  shotCount--;
+
+
+
+}
+
+function moveXSprite() {
 
   xSpriteXPos = gameobjects[0].x;
   xSpriteYPos = gameobjects[0].y
-
 
 }
 // Total Frames
