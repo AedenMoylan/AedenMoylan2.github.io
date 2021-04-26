@@ -10,6 +10,9 @@ var xSpriteYPos = -200;
 var splashPositionX = -200;
 var splashPositionY = -200;
 
+var explosionPositionX = -200;
+var explosionPositionY = -200;
+
 var isPlayerOnEnemy = false;
 
 playerPosition = [
@@ -335,6 +338,19 @@ function playSplashSound() {
 
 }
 
+function moveAppropriateSprites() {
+
+  if (isPlayerOnEnemy == false) {
+    splashPositionX = gameobjects[0].x;
+    splashPositionY = gameobjects[0].y;
+  }
+  else if (isPlayerOnEnemy == true) {
+    explosionPositionX = gameobjects[0].x;
+    explosionPositionY = gameobjects[0].y;
+  }
+}
+
+
 function hitEnemy() {
 
 
@@ -375,7 +391,7 @@ function animate() {
 
   context.drawImage(splashSprite, (splashSprite.width / 4) * currentFrame, (splashSprite.height / 2), 62, 33, splashPositionX, splashPositionY, 100, 100);
 
-  context.drawImage(explosionSprite, (explosionSprite.width / 4) * currentFrame, (explosionSprite.height / 4), 64, 64, 200, 200, 90, 75);
+  context.drawImage(explosionSprite, (explosionSprite.width / 4) * currentFrame, (explosionSprite.height / 4), 64, 64, explosionPositionX, explosionPositionY, 100, 100);
 
   context.drawImage(xSprite, xSpriteXPos + 30, xSpriteYPos + 30, 42, 42);
   // draws gameover is health <= 0
