@@ -355,8 +355,11 @@ function shootMissile() {
   moveXSprite();
 
   onPageLoad();
+  if (selection === "sens missile") {
 
-  displayRadarCoordinates();
+
+    displayRadarCoordinates();
+  }
 }
 
 
@@ -458,6 +461,7 @@ function displayWelcomeMessage() {
 }
 
 function displayRadarCoordinates() {
+
 
   radarXCoordinate = gameobjects[0].x - enemyPosition[0][0];
   radarYCoordinate = gameobjects[0].y - enemyPosition[0][1];
