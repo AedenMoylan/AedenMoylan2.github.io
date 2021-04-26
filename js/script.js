@@ -349,7 +349,7 @@ function shootMissile() {
 
   moveXSprite();
 
-  document.write("Hello World!");
+
 }
 
 
