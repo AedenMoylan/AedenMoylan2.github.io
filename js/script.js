@@ -141,22 +141,22 @@ explosionSprite.src = "./img/explosion.png"
 
 
 
-var xSprite = new Array();
 
-xSprite[0] = new Image();
-xSprite[0].src = 'images/img/x sprite.png';
 
-xSprite[1] = new Image();
-xSprite[1].src = 'images/img/x sprite.png';
+xSprite1 = new Image();
+xSprite1.src = 'images/img/x sprite.png';
 
-xSprite[2] = new Image();
-xSprite[2].src = 'images/img/x sprite.png';
+xSprite2 = new Image();
+xSprite2.src = 'images/img/x sprite.png';
 
-xSprite[3] = new Image();
-xSprite[3].src = 'images/img/x sprite.png';
+xSprite3 = new Image();
+xSprite3.src = 'images/img/x sprite.png';
 
-xSprite[4] = new Image();
-xSprite[4].src = 'images/img/x sprite.png';
+xSprite4 = new Image();
+xSprite4.src = 'images/img/x sprite.png';
+
+xSprite5 = new Image();
+xSprite5.src = 'images/img/x sprite.png';
 
 // audio which is used in the game
 var buttonAudio = new Audio('buttonSound3.mp3');
@@ -413,11 +413,11 @@ function animate() {
   context.drawImage(splashSprite, (splashSprite.width / 4) * currentFrame, (splashSprite.height / 2), 62, 33, splashPositionX, splashPositionY, 100, 100);
 
 
-  context.drawImage(xSprite[0], xSpriteXPos[0] + 30, xSpriteYPos[0] + 30, 42, 42);
-  context.drawImage(xSprite[1], xSpriteXPos[1] + 30, xSpriteYPos[1] + 30, 42, 42);
-  context.drawImage(xSprite[2], xSpriteXPos[2] + 30, xSpriteYPos[2] + 30, 42, 42);
-  context.drawImage(xSprite[3], xSpriteXPos[3] + 30, xSpriteYPos[3] + 30, 42, 42);
-  context.drawImage(xSprite[4], xSpriteXPos[4] + 30, xSpriteYPos[4] + 30, 42, 42);
+  context.drawImage(xSprite1, xSpriteXPos1 + 30, xSpriteYPos1 + 30, 42, 42);
+  context.drawImage(xSprite2, xSpriteXPos2 + 30, xSpriteYPos2 + 30, 42, 42);
+  context.drawImage(xSprite3, xSpriteXPos3 + 30, xSpriteYPos3 + 30, 42, 42);
+  context.drawImage(xSprite4, xSpriteXPos4 + 30, xSpriteYPos4 + 30, 42, 42);
+  context.drawImage(xSprite5, xSpriteXPos5 + 30, xSpriteYPos5 + 30, 42, 42);
 
 
   context.drawImage(explosionSprite, (explosionSprite.width / 4) * currentFrame, (explosionSprite.height / 4), 64, 64, explosionPositionX, explosionPositionY, 100, 100);
