@@ -317,6 +317,7 @@ function shootMissile() {
 
   playSplashSound();
   moveXSprite();
+  moveAppropriateSprites();
 
   if (isPlayerOnEnemy == true) {
 
