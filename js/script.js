@@ -32,6 +32,11 @@ console.log(ranNumy);
 
 makeEnemyPosition();
 
+var radarText = canvas.getContext("2d");
+radarText.font = "30px Arial";
+radarText.fillText("Hello World", 10, 50);
+
+
 // Update Heads Up Display with song Information
 function missileSelection() {
   var selection = document.getElementById("missiles").value;
