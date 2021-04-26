@@ -27,6 +27,9 @@ var ranNumx = Math.floor((Math.random() * 8) + 1);
 
 var ranNumy = Math.floor((Math.random() * 6) + 1);
 
+var radarXCoordinate = 0;
+var radarYCoordinate = 0;
+
 console.log(ranNumx);
 console.log(ranNumy);
 
@@ -352,6 +355,8 @@ function shootMissile() {
   moveXSprite();
 
   onPageLoad();
+
+  displayRadarCoordinates();
 }
 
 
@@ -451,6 +456,24 @@ function displayWelcomeMessage() {
   alert(fullMessage);
 
 }
+
+function displayRadarCoordinates() {
+
+  radarXCoordinate = gameobjects[0].x - enemyPosition[0][0];
+  radarYCoordinate = gameobjects[0].x - enemyPosition[0][1];
+
+  if (radarXCoordinate < 0) {
+    radarXCoordinate = radarXCoordinate * -1;
+  }
+
+  if (radarYCoordinate < 0) {
+    radarYCoordinate = radarYCoordinate * -1;
+  }
+
+  alert(radarXCoordinate, radarYCoordinate);
+
+}
+
 function onPageLoad() {
 
 
