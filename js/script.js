@@ -412,9 +412,13 @@ function animate() {
 
   context.drawImage(splashSprite, (splashSprite.width / 4) * currentFrame, (splashSprite.height / 2), 62, 33, splashPositionX, splashPositionY, 100, 100);
 
-  for (i = 0; i < 5; i++) {
-    context.drawImage(xSprite[i], xSpriteXPos[i] + 30, xSpriteYPos[i] + 30, 42, 42);
-  }
+
+  context.drawImage(xSprite[0], xSpriteXPos[0] + 30, xSpriteYPos[0] + 30, 42, 42);
+  context.drawImage(xSprite[1], xSpriteXPos[1] + 30, xSpriteYPos[1] + 30, 42, 42);
+  context.drawImage(xSprite[2], xSpriteXPos[2] + 30, xSpriteYPos[2] + 30, 42, 42);
+  context.drawImage(xSprite[3], xSpriteXPos[3] + 30, xSpriteYPos[3] + 30, 42, 42);
+  context.drawImage(xSprite[4], xSpriteXPos[4] + 30, xSpriteYPos[4] + 30, 42, 42);
+
 
   context.drawImage(explosionSprite, (explosionSprite.width / 4) * currentFrame, (explosionSprite.height / 4), 64, 64, explosionPositionX, explosionPositionY, 100, 100);
 
