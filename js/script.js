@@ -131,6 +131,9 @@ gridSprite.src = "./img/grid.png"
 var gameOverSprite = new Image();
 gameOverSprite.src = "./img/gameOver.jpg"
 
+var explosionSprite = new Image();
+explosionSprite.src = "./img/explosion.png"
+
 //for (var i = 0; i < 10; i++)
 //{
 var xSprite = new Image();
@@ -369,10 +372,12 @@ function animate() {
   context.drawImage(backGroundSprite, 0, 0, 800, 600);
   context.drawImage(gridSprite, 0, 0, 800, 800);
   context.drawImage(sprite, (0), (0), 42, 42, gameobjects[0].x, gameobjects[0].y, 100, 100);
-  context.drawImage(xSprite, xSpriteXPos + 30, xSpriteYPos + 30, 42, 42);
 
   context.drawImage(splashSprite, (splashSprite.width / 4) * currentFrame, (splashSprite.height / 2), 62, 33, splashPositionX, splashPositionY, 100, 100);
 
+  context.drawImage(explosionSprite, (explosionSprite.width / 4) * currentFrame, (splashSprite.height / 4), 64, 64, 200, 200, 100, 100);
+
+  context.drawImage(xSprite, xSpriteXPos + 30, xSpriteYPos + 30, 42, 42);
   // draws gameover is health <= 0
   if (playerHealth <= 0) {
     context.drawImage(gameOverSprite, 0, 0, 800, 600);
