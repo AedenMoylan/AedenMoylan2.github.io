@@ -177,7 +177,7 @@ document.getElementById("buttonUp").onmouseup = function () { buttonUp() };
 document.getElementById("buttonDown").onmouseup = function () { buttonUp() };
 document.getElementById("buttonLeft").onmouseup = function () { buttonUp() };
 document.getElementById("buttonRight").onmouseup = function () { buttonUp() };
-document.getElementById("splash").onmouseup = function () { playSplashSound() };
+document.getElementById("splash").onmouseup = function () { shootMissile() };
 
 // plays a button sound anytime one of these functions is activated
 function leftButtonOnClick() {
@@ -296,17 +296,23 @@ function checkIfPosIsEqual() {
 
 }
 
-
-function playSplashSound() {
+function shootMissile() {
   gamerInput = new GamerInput("splash");
-  splashSound.play();
+  console.log(bababababababababooey);
 
-  console.log(shotMessage);
-  console.log(shotCount);
+}
 
-  if (shotCount <= 0) {
-    console.log("you lose");
-  }
+
+//function playSplashSound() {
+gamerInput = new GamerInput("splash");
+splashSound.play();
+
+console.log(shotMessage);
+console.log(shotCount);
+
+if (shotCount <= 0) {
+  console.log("you lose");
+  //}
 
   shotCount--;
 
