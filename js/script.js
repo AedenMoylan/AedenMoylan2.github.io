@@ -32,6 +32,8 @@ console.log(ranNumy);
 
 makeEnemyPosition();
 
+displayWelcomeMessage();
+
 // var radarText = canvas.getContext("2d");
 // radarText.font = "30px Arial";
 // radarText.fillText("Hello World", 10, 50);
@@ -440,13 +442,18 @@ function animate() {
 
 }
 
-function onPageLoad() {
+function displayWelcomeMessage() {
 
   var url = document.location.href;
   var welcomeMessage = "welcome ";
   var splitString = url.split("=");
   var fullMessage = welcomeMessage.concat(splitString[1]);
   alert(fullMessage);
+
+}
+function onPageLoad() {
+
+
 
 }
 
