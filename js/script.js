@@ -470,6 +470,9 @@ function displayRadarCoordinates() {
     radarYCoordinate = radarYCoordinate * -1;
   }
 
+
+  console.log(enemyPosition[0][1]);
+
   alert("Enemy is (" + radarXCoordinate + "," + radarYCoordinate + ") away from the player ");
 
 }
