@@ -144,19 +144,19 @@ explosionSprite.src = "./img/explosion.png"
 
 
 xSprite1 = new Image();
-xSprite1.src = 'images/img/x sprite.png';
+xSprite1.src = './img/x sprite.png';
 
 xSprite2 = new Image();
-xSprite2.src = 'images/img/x sprite.png';
+xSprite2.src = './img/x sprite.png';
 
 xSprite3 = new Image();
-xSprite3.src = 'images/img/x sprite.png';
+xSprite3.src = './img/x sprite.png';
 
 xSprite4 = new Image();
-xSprite4.src = 'images/img/x sprite.png';
+xSprite4.src = './img/x sprite.png';
 
 xSprite5 = new Image();
-xSprite5.src = 'images/img/x sprite.png';
+xSprite5.src = './img/x sprite.png';
 
 // audio which is used in the game
 var buttonAudio = new Audio('buttonSound3.mp3');
