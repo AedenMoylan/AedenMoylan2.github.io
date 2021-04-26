@@ -4,9 +4,19 @@ var context = canvas.getContext("2d");
 
 var shotCount = 5;
 var shotMessage = "Shots Fired: ";
-var xSpriteXPos = -200;
-var xSpriteYPos = -200;
+//var xSpriteXPos = -200;
+//var xSpriteYPos = -200;
 
+//var xSpriteXPos[5];
+var xSpriteX = new xSpriteXPos(5);
+var xSpriteY = new xSpriteyPos(5);
+
+for (i = 0; i < 5; i++) {
+  xSpriteXPos(i) = -200;
+  xSpriteYPos(i) = -200;
+  // text += "<li>" + fruits[i] + "</li>";
+  console.log(xSpriteXPos(i));
+}
 var splashPositionX = -200;
 var splashPositionY = -200;
 
