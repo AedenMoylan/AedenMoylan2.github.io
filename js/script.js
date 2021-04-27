@@ -349,6 +349,9 @@ function shootMissile() {
 
     onPageLoad();
 
+    if (isPlayerOnEnemy == true && isMissileSelected == true) {
+      isGameWon = true;
+    }
 
     if (isSensMissileSelected === true) {
       displayRadarCoordinates();
@@ -473,9 +476,7 @@ function displayRadarCoordinates() {
     radarYCoordinate = radarYCoordinate * -1;
   }
 
-  if (radarXCoordinate === 0 && radarYCoordinate === 0 && isMissileSelected == true) {
-    isGameWon = true;
-  }
+
 
 
   if (isGameWon === false) {
