@@ -438,7 +438,7 @@ function animate() {
   context.drawImage(explosionSprite, (explosionSprite.width / 4) * currentFrame, (explosionSprite.height / 4), 64, 64, explosionPositionX, explosionPositionY, 100, 100);
 
   if (isGameWon == true) {
-    context.draw(victorySprite, 0, 0, 800, 600);
+    context.drawImage(victorySprite, 0, 0, 800, 600);
   }
 
 
