@@ -315,8 +315,7 @@ function draw() {
 
 }
 
-checkIfGameOver()
-{
+function checkIfGameOver() {
   if (shotCount <= 0) {
     isGameLost = true;
   }
