@@ -2,7 +2,7 @@
 var canvas = document.getElementById("game");
 var context = canvas.getContext("2d");
 
-var shotCount = 5;
+var shotCount = 4;
 var shotMessage = "Shots Fired: ";
 
 var xSpriteCounter = 0;
@@ -21,6 +21,7 @@ var explosionPositionY = -200;
 var isPlayerOnEnemy = false;
 
 var isGameWon = false;
+var isGameLost = false;
 
 playerPosition = [
   [100, 100]
@@ -141,6 +142,9 @@ explosionSprite.src = "./img/explosion.png"
 
 var victorySprite = new Image();
 victorySprite.src = "./img/victory.png"
+
+var loseSprite = new Image();
+loseSprite.src = "./img/lose.png"
 
 
 
@@ -298,6 +302,8 @@ function update() {
 
 
   checkIfPosIsEqual();
+
+  checkIfGameOver();
 }
 
 // draw gameobjects
@@ -309,6 +315,13 @@ function draw() {
 
 }
 
+checkIfGameOver()
+{
+  if (shotCount <= 0) {
+    isGameLost = true;
+  }
+
+}
 function checkIfPosIsEqual() {
 
   if (gameobjects[0].x == enemyPosition[0][0] && gameobjects[0].y == enemyPosition[0][1]) {
@@ -439,6 +452,10 @@ function animate() {
 
   if (isGameWon == true) {
     context.drawImage(victorySprite, 0, 0, 800, 600);
+  }
+
+  if (isGameLost == true) {
+    context.drawImage(loseSprite, 0, 0, 800, 600);
   }
 
 
