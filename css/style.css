@@ -19,6 +19,14 @@
     font-size: 28px;
 
 }
+
+.custom-select {
+
+    position: relative;
+    left: 350px;
+    top: -300px;
+}
+
 .red{
     color: #FF0000;
 
