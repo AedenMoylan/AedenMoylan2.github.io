@@ -13,7 +13,7 @@ var splashPositionX = -200;
 var splashPositionY = -200;
 
 var isSensMissileSelected = false;
-var isMissileSelected = true;
+var isMissileSelected = false;
 
 var explosionPositionX = -200;
 var explosionPositionY = -200;
@@ -370,11 +370,12 @@ function shootMissile() {
     moveXSprite();
 
     onPageLoad();
-    if (selection === "sens missile") {
 
 
+    if (isSensMissileSelected === true) {
       displayRadarCoordinates();
     }
+
   }
 }
 
