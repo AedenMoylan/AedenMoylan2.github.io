@@ -55,7 +55,6 @@ function missileSelection() {
   var active = document.getElementById("active");
 
   document.getElementById("HUD").innerHTML = selection + " active ";
-  console.log("song Active");
 
   if (selection === "sens missile") {
     isSensMissileSelected = true;
@@ -118,9 +117,6 @@ var options = [{
 
 ];
 
-// gets big dragon sprite
-var npcsprite = new Image();
-npcsprite.src = "./img/bahamut.png";
 
 var splashSprite = new Image();
 splashSprite.src = "./img/splash.png";
@@ -133,9 +129,6 @@ backGroundSprite.src = "./img/ocean.jpg"
 // gets gameover sprite
 var gridSprite = new Image();
 gridSprite.src = "./img/grid.png"
-
-var gameOverSprite = new Image();
-gameOverSprite.src = "./img/gameOver.jpg"
 
 var explosionSprite = new Image();
 explosionSprite.src = "./img/explosion.png"
@@ -165,9 +158,6 @@ xSprite5.src = './img/x sprite.png';
 
 // audio which is used in the game
 var buttonAudio = new Audio('buttonSound3.mp3');
-var ff7Audio = new Audio("battleff7.mp3");
-var xeno2Audio = new Audio("battleXeno2.mp3");
-var pursuitAudio = new Audio("pursuit.mp3");
 var splashSound = new Audio("splash.mp3");
 var selectBox = document.getElementById('missiles');
 
@@ -306,14 +296,6 @@ function update() {
   checkIfGameOver();
 }
 
-// draw gameobjects
-function draw() {
-  // Clear Canvas
-  // Iterate through all GameObjects
-  // Draw each GameObject
-  // console.log("Draw");
-
-}
 
 function checkIfGameOver() {
   if (shotCount <= 0) {
@@ -330,7 +312,6 @@ function checkIfPosIsEqual() {
   else {
     isPlayerOnEnemy = false;
   }
-  console.log(isPlayerOnEnemy);
 
 }
 
@@ -396,11 +377,6 @@ function moveAppropriateSprites() {
   }
 }
 
-
-function hitEnemy() {
-
-
-}
 
 function moveXSprite() {
 
