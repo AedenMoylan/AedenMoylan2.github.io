@@ -187,6 +187,10 @@ var gamerInput = new GamerInput("None");
 
 
 
+// creates array gameobjects. 0 = player, 1 = enemy.
+var gameobjects = [player, new GameObject("NPC", npcsprite, 100)];
+
+
 document.getElementById("buttonUp").onmouseup = function () { buttonUp() };
 document.getElementById("buttonDown").onmouseup = function () { buttonUp() };
 document.getElementById("buttonLeft").onmouseup = function () { buttonUp() };
