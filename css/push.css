@@ -23,6 +23,9 @@
     padding: 30px;
     text-align: center;
     font-size: 28px;
+    position: relative;
+    left: 350px;
+    top: -300px;
 }
 
 .fire:hover {
@@ -34,6 +37,12 @@
     transform: translateY(5px);
 }
 
+.custom-select {
+
+    position: relative;
+    left: 350px;
+    top: -300px;
+}
 .red {
     color: #FF0000;
 }
