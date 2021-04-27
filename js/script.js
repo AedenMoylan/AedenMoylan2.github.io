@@ -481,10 +481,7 @@ function displayRadarCoordinates() {
 
 function onPageLoad() {
 
-
-
 }
-
 
 // gameloop
 function gameloop() {
