@@ -10,6 +10,11 @@
     background-color: #3F3F3F;
 }
 
+.fire {
+
+    background-color: #FF0000;
+
+}
 .red{
     color: #FF0000;
 }
@@ -32,4 +37,8 @@
 
 .round {
     border-radius: 50%;
+}
+
+.veryRound {
+    border-radius: 100%;
 }
