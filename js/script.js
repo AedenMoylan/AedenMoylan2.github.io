@@ -51,7 +51,7 @@ function missileSelection() {
   var active = document.getElementById("active");
 
   document.getElementById("HUD").innerHTML = selection + " active ";
-  console.log("song Active");
+
 
   if (selection === "sens missile") {
     isSensMissileSelected = true;
@@ -112,10 +112,6 @@ var options = [{
 
 ];
 
-// gets big dragon sprite
-var npcsprite = new Image();
-npcsprite.src = "./img/bahamut.png";
-
 var splashSprite = new Image();
 splashSprite.src = "./img/splash.png";
 // gets player sprite
@@ -127,9 +123,6 @@ backGroundSprite.src = "./img/ocean.jpg"
 // gets gameover sprite
 var gridSprite = new Image();
 gridSprite.src = "./img/grid.png"
-
-var gameOverSprite = new Image();
-gameOverSprite.src = "./img/gameOver.jpg"
 
 var explosionSprite = new Image();
 explosionSprite.src = "./img/explosion.png"
@@ -159,9 +152,6 @@ xSprite5.src = './img/x sprite.png';
 
 // audio which is used in the game
 var buttonAudio = new Audio('buttonSound3.mp3');
-var ff7Audio = new Audio("battleff7.mp3");
-var xeno2Audio = new Audio("battleXeno2.mp3");
-var pursuitAudio = new Audio("pursuit.mp3");
 var splashSound = new Audio("splash.mp3");
 var selectBox = document.getElementById('missiles');
 
@@ -300,17 +290,9 @@ function update() {
   checkIfGameOver();
 }
 
-// draw gameobjects
-function draw() {
-  // Clear Canvas
-  // Iterate through all GameObjects
-  // Draw each GameObject
-  // console.log("Draw");
-
-}
 
 function checkIfGameOver() {
-  if (shotCount <= 0) {
+  if (shotCount < 0) {
     isGameLost = true;
   }
 
@@ -365,11 +347,6 @@ function playSplashSound() {
   gamerInput = new GamerInput("splash");
   splashSound.play();
 
-
-
-
-
-
 }
 
 function moveAppropriateSprites() {
@@ -382,12 +359,6 @@ function moveAppropriateSprites() {
     explosionPositionX = gameobjects[0].x;
     explosionPositionY = gameobjects[0].y;
   }
-}
-
-
-function hitEnemy() {
-
-
 }
 
 function moveXSprite() {
@@ -447,13 +418,6 @@ function animate() {
 
 
 
-  //context.drawImage(xSprite, xSpriteXPos + 30, xSpriteYPos + 30, 42, 42);
-  // draws gameover is health <= 0
-  if (playerHealth <= 0) {
-    context.drawImage(gameOverSprite, 0, 0, 800, 600);
-  }
-
-
 }
 
 function displayWelcomeMessage() {
@@ -500,7 +464,6 @@ function onPageLoad() {
 // gameloop
 function gameloop() {
   update();
-  draw();
   animate();
   window.requestAnimationFrame(gameloop);
 
