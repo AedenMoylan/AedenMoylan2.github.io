@@ -43,10 +43,6 @@ makeEnemyPosition();
 
 displayWelcomeMessage();
 
-// var radarText = canvas.getContext("2d");
-// radarText.font = "30px Arial";
-// radarText.fillText("Hello World", 10, 50);
-
 
 // Update Heads Up Display with song Information
 function missileSelection() {
@@ -77,8 +73,6 @@ function makeEnemyPosition() {
   enemyPosition = [
     [ranNumx * 100 - 100, ranNumy * 100 - 100]
   ]
-
-  console.log(enemyPosition);
 }
 
 
@@ -330,7 +324,7 @@ function checkIfPosIsEqual() {
   else {
     isPlayerOnEnemy = false;
   }
-  console.log(isPlayerOnEnemy);
+
 
 }
 
@@ -338,12 +332,6 @@ function shootMissile() {
   if (isMissileSelected === true || isSensMissileSelected === true) {
     gamerInput = new GamerInput("splash");
 
-    console.log(shotMessage);
-    console.log(shotCount);
-
-    if (shotCount <= 0) {
-      console.log("you lose");
-    }
     shotCount--;
 
     playSplashSound();
