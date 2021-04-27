@@ -50,49 +50,49 @@ function missileSelection() {
 
   var selection = document.getElementById("missiles").value;
   var active = document.getElementById("active");
-  if (active.checked == true) {
-    document.getElementById("HUD").innerHTML = selection + " active ";
-    console.log("song Active");
 
-    if (selection === "sens missile") {
-      isSensMissileSelected = true;
-      isMissileSelected = false;
-    }
+  document.getElementById("HUD").innerHTML = selection + " active ";
+  console.log("song Active");
 
-    if (selection === "missile") {
-      isSensMissileSelected = false;
-      isMissileSelected = true;
-    }
-    // // plays 3 songs based on the selection
-    // if (selection === "Pursuit.mp3") {
-    //   pursuitAudio.play();
-    // }
-
-    // if (selection === "battleff7.mp3") {
-    //   ff7Audio.play();
-    // }
-
-    // if (selection === "battleXeno2.mp3") {
-    //   xeno2Audio.play();
-    // }
-
-  }
-  else {
-    document.getElementById("HUD").innerHTML = selection + " selected ";
-
-    isSensMissileSelected = false;
+  if (selection === "sens missile") {
+    isSensMissileSelected = true;
     isMissileSelected = false;
-    // // pauses the song and restarts them
-    // pursuitAudio.pause();
-    // pursuitAudio.currentTime = 0;
-
-    // ff7Audio.pause();
-    // ff7Audio.currentTime = 0;
-
-    // xeno2Audio.pause();
-    // xeno2Audio.currentTime = 0;
   }
+
+  if (selection === "missile") {
+    isSensMissileSelected = false;
+    isMissileSelected = true;
+  }
+  // // plays 3 songs based on the selection
+  // if (selection === "Pursuit.mp3") {
+  //   pursuitAudio.play();
+  // }
+
+  // if (selection === "battleff7.mp3") {
+  //   ff7Audio.play();
+  // }
+
+  // if (selection === "battleXeno2.mp3") {
+  //   xeno2Audio.play();
+  // }
+
 }
+
+// document.getElementById("HUD").innerHTML = selection + " selected ";
+
+// isSensMissileSelected = false;
+// isMissileSelected = false;
+// // pauses the song and restarts them
+// pursuitAudio.pause();
+// pursuitAudio.currentTime = 0;
+
+// ff7Audio.pause();
+// ff7Audio.currentTime = 0;
+
+// xeno2Audio.pause();
+// xeno2Audio.currentTime = 0;
+//   }
+// }
 
 
 function makeEnemyPosition() {
