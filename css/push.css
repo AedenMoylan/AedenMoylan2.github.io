@@ -62,6 +62,10 @@
     border-radius: 50%;
 }
 
+.veryRound {
+    border-radius: 0%;
+}
+
 /* Slider Switch Checkbox */
 
 .switch {
