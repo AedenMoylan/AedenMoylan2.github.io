@@ -489,7 +489,6 @@ function onPageLoad() {
 // gameloop
 function gameloop() {
   update();
-  draw();
   animate();
   window.requestAnimationFrame(gameloop);
 
