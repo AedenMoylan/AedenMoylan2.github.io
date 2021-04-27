@@ -144,7 +144,7 @@ var victorySprite = new Image();
 victorySprite.src = "./img/victory.png"
 
 var loseSprite = new Image();
-loseSprite.src = "./img/losr.png"
+loseSprite.src = "./img/lose.png"
 
 
 
