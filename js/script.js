@@ -20,6 +20,8 @@ var explosionPositionY = -200;
 
 var isPlayerOnEnemy = false;
 
+var isGameWon = false;
+
 playerPosition = [
   [100, 100]
 ];
@@ -63,36 +65,10 @@ function missileSelection() {
     isSensMissileSelected = false;
     isMissileSelected = true;
   }
-  // // plays 3 songs based on the selection
-  // if (selection === "Pursuit.mp3") {
-  //   pursuitAudio.play();
-  // }
 
-  // if (selection === "battleff7.mp3") {
-  //   ff7Audio.play();
-  // }
-
-  // if (selection === "battleXeno2.mp3") {
-  //   xeno2Audio.play();
-  // }
 
 }
 
-// document.getElementById("HUD").innerHTML = selection + " selected ";
-
-// isSensMissileSelected = false;
-// isMissileSelected = false;
-// // pauses the song and restarts them
-// pursuitAudio.pause();
-// pursuitAudio.currentTime = 0;
-
-// ff7Audio.pause();
-// ff7Audio.currentTime = 0;
-
-// xeno2Audio.pause();
-// xeno2Audio.currentTime = 0;
-//   }
-// }
 
 
 function makeEnemyPosition() {
@@ -163,7 +139,8 @@ gameOverSprite.src = "./img/gameOver.jpg"
 var explosionSprite = new Image();
 explosionSprite.src = "./img/explosion.png"
 
-
+var victorySprite = new Image();
+victorySprite.src = "./img/victory.png"
 
 
 
@@ -189,6 +166,7 @@ var xeno2Audio = new Audio("battleXeno2.mp3");
 var pursuitAudio = new Audio("pursuit.mp3");
 var splashSound = new Audio("splash.mp3");
 var selectBox = document.getElementById('missiles');
+
 
 // add all of the things from the options array to the selectbox
 for (var i = 0; i < options.length; i++) {
@@ -456,6 +434,10 @@ function animate() {
 
   context.drawImage(explosionSprite, (explosionSprite.width / 4) * currentFrame, (explosionSprite.height / 4), 64, 64, explosionPositionX, explosionPositionY, 100, 100);
 
+  if (isGameWon == true) {
+    context.draw(victorySprite, 0, 0, 800, 600);
+  }
+
 
 
   //context.drawImage(xSprite, xSpriteXPos + 30, xSpriteYPos + 30, 42, 42);
@@ -491,10 +473,15 @@ function displayRadarCoordinates() {
     radarYCoordinate = radarYCoordinate * -1;
   }
 
+  if (radarXCoordinate === 0 && radarYCoordinate === 0 && isMissileSelected == true) {
+    isGameWon = true;
+  }
 
-  console.log(enemyPosition[0][1]);
 
-  alert("Enemy is (" + radarXCoordinate + "," + radarYCoordinate + ") away from the player ");
+  if (isGameWon === false) {
+
+    alert("Enemy is (" + radarXCoordinate + "," + radarYCoordinate + ") away from the player ");
+  }
 
 }
 
