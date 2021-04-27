@@ -16,6 +16,24 @@
     transform: translateY(5px);
 }
 
+.fire {
+    background-color: #FF0000;
+    border: 2px solid #000000;
+    box-shadow: 0 9px#505050;
+    padding: 30px;
+    text-align: center;
+    font-size: 28px;
+}
+
+.fire:hover {
+    background-color: #FFFF00;
+}
+
+.fire:active {
+    box-shadow: 0 5px #3D3D3D;
+    transform: translateY(5px);
+}
+
 .red {
     color: #FF0000;
 }
