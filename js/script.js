@@ -12,6 +12,9 @@ var xSpriteYPos = [-200, -200, -200, -200, -200];
 var splashPositionX = -200;
 var splashPositionY = -200;
 
+var isSensMissileSelected = false;
+var isMissileSelected = true;
+
 var explosionPositionX = -200;
 var explosionPositionY = -200;
 
@@ -44,39 +47,50 @@ displayWelcomeMessage();
 
 // Update Heads Up Display with song Information
 function missileSelection() {
-  var selection = document.getElementById("missiles").value;
 
+  var selection = document.getElementById("missiles").value;
   var active = document.getElementById("active");
   if (active.checked == true) {
     document.getElementById("HUD").innerHTML = selection + " active ";
     console.log("song Active");
 
-    // plays 3 songs based on the selection
-    if (selection === "Pursuit.mp3") {
-      pursuitAudio.play();
+    if (selection === "sens missile") {
+      isSensMissileSelected = true;
+      isMissileSelected = false;
     }
 
-    if (selection === "battleff7.mp3") {
-      ff7Audio.play();
+    if (selection === "missile") {
+      isSensMissileSelected = false;
+      isMissileSelected = true;
     }
+    // // plays 3 songs based on the selection
+    // if (selection === "Pursuit.mp3") {
+    //   pursuitAudio.play();
+    // }
 
-    if (selection === "battleXeno2.mp3") {
-      xeno2Audio.play();
-    }
+    // if (selection === "battleff7.mp3") {
+    //   ff7Audio.play();
+    // }
+
+    // if (selection === "battleXeno2.mp3") {
+    //   xeno2Audio.play();
+    // }
 
   }
   else {
     document.getElementById("HUD").innerHTML = selection + " selected ";
 
-    // pauses the song and restarts them
-    pursuitAudio.pause();
-    pursuitAudio.currentTime = 0;
+    isSensMissileSelected = false;
+    isMissileSelected = false;
+    // // pauses the song and restarts them
+    // pursuitAudio.pause();
+    // pursuitAudio.currentTime = 0;
 
-    ff7Audio.pause();
-    ff7Audio.currentTime = 0;
+    // ff7Audio.pause();
+    // ff7Audio.currentTime = 0;
 
-    xeno2Audio.pause();
-    xeno2Audio.currentTime = 0;
+    // xeno2Audio.pause();
+    // xeno2Audio.currentTime = 0;
   }
 }
 
@@ -331,34 +345,36 @@ function checkIfPosIsEqual() {
 }
 
 function shootMissile() {
-  gamerInput = new GamerInput("splash");
+  if (isMissileSelected === true || isSensMissileSelected === true) {
+    gamerInput = new GamerInput("splash");
 
-  console.log(shotMessage);
-  console.log(shotCount);
+    console.log(shotMessage);
+    console.log(shotCount);
 
-  if (shotCount <= 0) {
-    console.log("you lose");
-  }
-  shotCount--;
+    if (shotCount <= 0) {
+      console.log("you lose");
+    }
+    shotCount--;
 
-  playSplashSound();
-  moveXSprite();
-  moveAppropriateSprites();
+    playSplashSound();
+    moveXSprite();
+    moveAppropriateSprites();
 
-  if (isPlayerOnEnemy == true) {
+    if (isPlayerOnEnemy == true) {
 
-  }
+    }
 
-  splashPositionX = gameobjects[0].x;
-  splashPositionY = gameobjects[0].y;
+    splashPositionX = gameobjects[0].x;
+    splashPositionY = gameobjects[0].y;
 
-  moveXSprite();
+    moveXSprite();
 
-  onPageLoad();
-  if (selection === "sens missile") {
+    onPageLoad();
+    if (selection === "sens missile") {
 
 
-    displayRadarCoordinates();
+      displayRadarCoordinates();
+    }
   }
 }
 
